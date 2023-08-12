@@ -1,0 +1,4 @@
+net.ipv4.ip_forward = 1
+3UAH3sqKLGo
+3UAH3sqKLGo
+tcpdump: listening on eno1, link-type EN10MB (Ethernet), capture size 65535 bytes

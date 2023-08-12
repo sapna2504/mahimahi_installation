@@ -1,0 +1,1 @@
+scp -r iiitd@157.245.97.51:"/home/iiitd/Sapna/VideoStreamingScript/automate/logs-collected/" incoming
