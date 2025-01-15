@@ -32,17 +32,19 @@ sudo make install
 
 To verify that mahimahi is successfully installed and working fine, follow the below steps: 
 1. sudo sysctl -w net.ipv4.ip_forward=1
-2. mm-delay 40  --> after running this command you should be able to enter the delay shell
-3. then try to ping google.com if works fine then okay otherwise look at below steps.
+2. mm-delay 40  --> After running this command, you should be able to enter the delay shell
+3. Then try to ping "google.com"; if it works fine, then okay; otherwise, look at the steps below.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 In case of errors:
-1. If error occurs after running ./configure and the error contains a keyword like 'Werror' then follow below steps:
+1. If an error occurs after running ./configure and the error contains a keyword like 'Werror,' then follow the below steps:
 	sudo nano configure.ac
 	PICKY_CXXFLAGS="-pedantic -Wall -Wextra -Weffc++ -Werror"   ---> Remove -Werror from this 
 	make
 	sudo make install
-2. If successful installation is done but pinging to google fails then run.
-	sudo ufw disable
+2. If the successful installation is done but pinging to Google fails, then.
+	Exit from the delay shell first-> To exit, write "exit." Now run, 
+	"sudo ufw disable"
+	Again, enter delay shell by writing "mm-delay 40" and then again try to ping google.com
 
