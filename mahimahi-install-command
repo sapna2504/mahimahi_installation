@@ -1,0 +1,48 @@
+sudo apt update
+sudo apt install python3 -y
+sudo apt update
+sudo apt install autoconf -y
+sudo apt install pkgconf -y
+sudo apt install pkg-config -y
+sudo apt install apache2 -y
+sudo apt update
+sudo apt install git -y
+sudo apt install libtool -y
+sudo apt update
+sudo apt install iptables -y
+sudo apt install iproute2 -y
+sudo apt install dnsmasq -y
+sudo apt install protobuf-compiler -y
+sudo apt install apache2-dev -y
+sudo apt install libcurl4-openssl-dev libssl-dev -y
+sudo apt install software-properties-common -y
+sudo apt install xcb-util-xrm -y
+sudo apt install libxcb-xrm-dev -y
+sudo apt install libxcb-present-dev -y
+sudo apt install libpango1.0-dev -y
+
+git clone https://github.com/ravinet/mahimahi
+cd mahimahi
+./autogen.sh
+./configure
+make
+sudo make install
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+To verify that mahimahi is successfully installed and working fine, follow the below steps: 
+1. sudo sysctl -w net.ipv4.ip_forward=1
+2. mm-delay 40  --> after running this command you should be able to enter the delay shell
+3. then try to ping google.com if works fine then okay otherwise look at below steps.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+In case of errors:
+1. If error occurs after running ./configure and the error contains a keyword like 'Werror' then follow below steps:
+	sudo nano configure.ac
+	PICKY_CXXFLAGS="-pedantic -Wall -Wextra -Weffc++ -Werror"   ---> Remove -Werror from this 
+	make
+	sudo make install
+2. If successful installation is done but pinging to google fails then run.
+	sudo ufw disable
+
