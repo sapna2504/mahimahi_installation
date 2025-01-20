@@ -59,7 +59,7 @@ def convert_to_mahimahi(input_file, duration_ms=180000):
 def main():
     
     input_file = "cooked/5g_trace_105_driving.txt"
-    output_file = "mahimahi/5g_trace_105_driving.txt"
+    output_file = "mahimahi/5g_trace_105_driving.com-"
     
     # Convert to Mahimahi format
     timestamps = convert_to_mahimahi(input_file)
